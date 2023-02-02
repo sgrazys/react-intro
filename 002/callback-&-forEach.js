@@ -37,7 +37,7 @@ const iterator = (what, fun) => {
     }
 }
 
-console.log('Funcijoje panaudojome call backa. ()');
+console.log('Funkcijoje panaudojome call backa. ()');
 
 // funkcijoje kaip argumenta naudojeme kita funkcija - callbackas
 iterator(animals, addStars)
@@ -46,6 +46,7 @@ iterator(colors, addPluses)
 
 console.log(`
 Naudojam forEach metoda, tam paciam rezultatui gauti.
+
 `);
 
 animals.forEach(addStars);
@@ -55,8 +56,13 @@ colors.forEach(addPluses);
 colors.forEach(i => console.log('^ ' + i + ' ^'));
 
 console.log(`
+
 Naudojam forEach metoda, su keliomis reiksmemis.
+
 `);
 
 // forEach metodas gali tureti 3 parametrus item'as (iteeruojamame arrejuje - PRIVALOMAS), indexas(iteruojamo itemo), arejus (spausdina pilna areju su kuriuo dirbame)
 colors.forEach((word, index, array) => console.log(word, index, array));
+
+console.log('CONSOLE CLEAR 67 eilute');
+console.clear()
