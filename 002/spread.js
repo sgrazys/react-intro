@@ -33,4 +33,12 @@ console.log(gyvunai1);
 
 // UKISKAI is vienu skliausteliu spreadinam i kitus
 
-console.log({ ...spalvos1 });
+console.log(...spalvos1, ...spalvos1, ...gyvunai1);
+
+
+let bVardai = ['Tauras', 'Jokubas'];
+const papBvardai = ['Kasparas', 'Gabrielius'];
+bVardai = [...bVardai, ...papBvardai];
+
+
+console.log(...bVardai);

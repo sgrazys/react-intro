@@ -51,7 +51,11 @@ console.log(arrOdd);
 arrEven.forEach((n, i) => arrEven[i] = n > 15 ? 0 : n)
 console.log(arrEven);
 
+console.log('-------');
+
 // h. Suraskite pirmą(mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;
+
+console.log(arrEven.findIndex(e => e > 10));
 
 
 // 3. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.

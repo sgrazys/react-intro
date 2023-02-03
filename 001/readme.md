@@ -1,0 +1,3 @@
+-   Random number generator
+-   Ternary
+-   If else
