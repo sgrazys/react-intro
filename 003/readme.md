@@ -1,0 +1,6 @@
+-   SPREAD operatorius.
+-   trumpai apie Prototipa
+-   forEach() metodas
+-   map()
+-   filter()
+-   sort
