@@ -126,3 +126,6 @@ console.log(shopMap);
 //Prideti 17 preke
 shopMap.set(17, { color: 'gray', dot: true, id: 17 });
 console.log(shopMap);
+
+console.log('CONSOLE CLEAR 131 ROW')
+console.clear();
