@@ -35,9 +35,9 @@ if (null === settings) {
 } else {
     settings = JSON.parse(settings)
 }
+
 htmlBody.style.backgroundColor = settings.color;
 color.value = settings.color;
-
 htmlBody.style.fontSize = settings.size + 'px';
 size.value = settings.size;
 
