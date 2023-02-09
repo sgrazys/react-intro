@@ -23,3 +23,6 @@ console.log(localStorage.getItem('myFavoriteColor'));
 // TURINT KAZKOKI REIKSME localStorage mes ja gauname, neturint jos mes gauname NULL. PRISIMINTI. Reiskias tokio key localStorage nebuvo.
 
 //
+
+console.clear();
+console.log('CONSOLE CLEAR ROW 27')
