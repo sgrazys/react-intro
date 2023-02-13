@@ -62,3 +62,52 @@ h1 {
         font-size: 0.5em;
     }
 }
+
+// BUTTON
+$buttonBlue: skyblue;
+$buttonGray: gray;
+$buttonRed: crimson;
+$buttonCoral: coral;
+
+button {
+    display: inline-block;
+    padding: 7px 30px;
+    margin: 20px 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    background-color: $buttonGray;
+    &:hover {
+        background-color: darken($buttonGray, 20%);
+    }
+    &.blue {
+        background-color: $buttonBlue;
+        color: #FFFFFF;
+        &:hover {
+            background-color: darken($buttonBlue, 20%);
+        }
+    }
+    &.red {
+        background-color: $buttonRed;
+        color: #FFFFFF;
+        &:hover {
+            background-color: darken($buttonRed, 20%);
+        }
+    }
+    &.coral {
+        background-color: $buttonCoral;
+        color: #FFFFFF;
+        &:hover {
+            background-color: darken($buttonCoral, 20%);
+        }
+    }
+
+}
