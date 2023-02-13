@@ -1,28 +1,31 @@
 import './App.scss';
-import Animal from './Components/jb/Animal';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AnimalList from './Components/008/AnimalList';
 
-const obj = ['racoon', 'fox'];
+const data = [
+    { id: 1, animal: 'Racoon', color: 'crimson', bold: true },
+    { id: 4, animal: 'Fox', color: 'brown', bold: true },
+    { id: 17, animal: 'Beaver', color: 'skyblue', bold: false },
+    { id: 8, animal: 'Unicorn', color: 'coral', bold: true },
+];
 
-// obj.add('racoon');
-// obj.add('fox');
+// padaryti gyvunu sarasa
 
 function App() {
-    // const fox = <u>FOX number: {rand(21, 50)}</u>;
-    // const labas = <strong>Sveiki gyvi {5*7} kartus!</strong>
-    
-  return (
-    <div className="App">
-      <header className="App-header">
-
-        <h2>{obj}</h2>
-
-        <Animal animalName = 'Wolf' color ='coral' animalFriend = 'Racoon' h1Class= 'blue'  />
-        <Animal animalName = 'Fox' color='white' animalFriend ='Beer' h1Class= 'green' />
-        <Animal animalName = 'Rabbit' color='black' animalFriend ='Moose' h1Class= 'yellow' />
-
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <div className="card">
+                    <h2>Animals List</h2>
+                    <ul className="list-group list-group-flush">
+                        {data.map((e, i) => (
+                            <AnimalList key={i} animal={e} index={i} />
+                        ))}
+                    </ul>
+                </div>
+            </header>
+        </div>
+    );
 }
 
 export default App;
