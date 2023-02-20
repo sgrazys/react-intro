@@ -1,4 +1,3 @@
-
 function Sq({s, i}) {
     return (
         <div className="sq" style={{

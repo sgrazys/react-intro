@@ -1,22 +1,18 @@
-//Sis komponentas yra App.jsx anukas
+function ShowName({animalName, fontFamily}) {
 
-function ShowName ({animalName, fontFamily}) {
-
-    switch(animalName){
-        case 'Wolf': return (
-            <i style={{fontFamily}}>V-I-L-K-A-S</i>
-        ); 
+    switch(animalName) {
+        case 'Racoon': return (
+            <i>R-A-C-OO-N</i>
+        );
         case 'Fox': return (
-            <strong>*L*A*P*E*</strong>
+            <u style={{fontFamily}}>FoX</u>
         );
-        case 'Rabbit': return (
-            <strong>T+r+i+u+s+i+s</strong>
-        );
-        case 'Duck': return (null)
+        case 'Wolf': return null;
         default: return (
-            <u>Tokio vardo nera!</u>
+            <b>what?</b>
         )
     }
+
 }
 
-export default ShowName;
+export default ShowName

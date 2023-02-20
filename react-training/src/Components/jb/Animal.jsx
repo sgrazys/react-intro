@@ -1,23 +1,21 @@
-import rand from "../../Functions/rand";
-import ShowAnimalFriend from "./ShowAnimalFriend";
-import ShowName from "./ShowName";
+import rand from '../../Functions/rand';
+import ShowName from './ShowName';
 
-function Animal ({animalName, color, animalFriend, h1Class}) {
+function Animal({color, animalName, h1Class}) {
 
-    const fontFamily = 'Fantasy';
+    const fontFamily = 'monospace';
+
     return (
-            <h1 className={'main-title ' + h1Class} style={{
+        <h1 className={'old-class ' + h1Class} style={{
             color,
-            padding: '20px 60px',
-            fontSize: rand(15, 30) + 'px',
+            padding: '8px 30px',
+            fontSize: rand(20, 50) + 'px',
             letterSpacing: rand(0, 1) ? '5px' : null,
+        }}>*<ShowName animalName={animalName} fontFamily={fontFamily} />* No: {
 
-            }}>*<ShowName animalName={animalName} fontFamily={fontFamily}/>* No: {
-            
-            rand(5, 25) 
-            
-            } and his friend is <ShowAnimalFriend animalFriend={animalFriend} fontFamily={fontFamily}/>
-            </h1>
+            rand(11, 15)
+
+        }</h1>
     )
 }
 
