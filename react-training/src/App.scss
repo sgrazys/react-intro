@@ -1,84 +1,84 @@
 .App {
-    text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 0.5s linear;
-    }
+	.App-logo {
+		animation: App-logo-spin infinite 0.5s linear;
+	}
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-    color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 h2 {
-    color: darkcyan;
+	color: darkcyan;
 }
 
 h1 {
-    &.blue {
-        background-color: #61dafb;
-    }
-    &.green {
-        background-color: lightgreen;
-    }
-    &.yellow {
-        background-color: lightyellow;
-    }
+	&.blue {
+		background-color: #61dafb;
+	}
+	&.green {
+		background-color: lightgreen;
+	}
+	&.yellow {
+		background-color: lightyellow;
+	}
 }
 
 $brick: brown;
 .A .B {
-    .bin {
-        color: coral;
-        &.brick {
-            color: $brick;
-        }
-    }
-    .C {
-        .row-1 {
-            color: crimson;
-        }
-        .row-2 {
-            color: skyblue;
-        }
-    }
+	.bin {
+		color: coral;
+		&.brick {
+			color: $brick;
+		}
+	}
+	.C {
+		.row-1 {
+			color: crimson;
+		}
+		.row-2 {
+			color: skyblue;
+		}
+	}
 }
 
 .list-bin {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    i {
-        font-size: 0.6em;
-    }
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	i {
+		font-size: 0.6em;
+	}
 }
 
 // ---------------------BUTTON
@@ -87,126 +87,126 @@ $butonGray: gray;
 $butonRed: crimson;
 $butonCoral: coral;
 button {
-    display: inline-block;
-    user-select: none;
-    padding: 7px 30px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-weight: 300;
-    border: none;
-    outline: none;
-    text-align: center;
-    transition: all 0.2s;
-    text-transform: uppercase;
-    background-color: $butonGray;
-    color: white;
-    cursor: pointer;
-    &:hover {
-        background-color: darken($butonGray, 20%);
-    }
-    &.blue {
-        background-color: $butonBlue;
-        color: white;
-        &:hover {
-            background-color: darken($butonBlue, 20%);
-        }
-    }
-    &.red {
-        background-color: $butonRed;
-        color: white;
-        &:hover {
-            background-color: darken($butonRed, 20%);
-        }
-    }
-    &.coral {
-        background-color: $butonCoral;
-        color: white;
-        &:hover {
-            background-color: darken($butonCoral, 20%);
-        }
-    }
-    &.small {
-        padding: 2px 3px;
-        margin: 2px 3px;
-        font-size: 20px;
-        border-radius: 5px;
-    }
+	display: inline-block;
+	user-select: none;
+	padding: 7px 30px;
+	margin: 20px 10px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-weight: 300;
+	border: none;
+	outline: none;
+	text-align: center;
+	transition: all 0.2s;
+	text-transform: uppercase;
+	background-color: $butonGray;
+	color: white;
+	cursor: pointer;
+	&:hover {
+		background-color: darken($butonGray, 20%);
+	}
+	&.blue {
+		background-color: $butonBlue;
+		color: white;
+		&:hover {
+			background-color: darken($butonBlue, 20%);
+		}
+	}
+	&.red {
+		background-color: $butonRed;
+		color: white;
+		&:hover {
+			background-color: darken($butonRed, 20%);
+		}
+	}
+	&.coral {
+		background-color: $butonCoral;
+		color: white;
+		&:hover {
+			background-color: darken($butonCoral, 20%);
+		}
+	}
+	&.small {
+		padding: 2px 3px;
+		margin: 2px 3px;
+		font-size: 20px;
+		border-radius: 5px;
+	}
 }
 
 .sq-bin {
-    display: flex;
-    width: 55%;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 20px;
-    .sq {
-        width: 150px;
-        height: 150px;
-        border: 5px solid yellowgreen;
-        border-radius: 10px;
-        margin: 5px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        color: white;
-        background-color: darkgray;
-        flex-wrap: wrap;
-        &.spin {
-            animation: App-logo-spin infinite 5s linear;
-        }
-        .spin-back {
-            animation: App-logo-spin infinite 5s linear;
-            animation-direction: reverse;
-        }
-    }
+	display: flex;
+	width: 55%;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 20px;
+	.sq {
+		width: 150px;
+		height: 150px;
+		border: 5px solid yellowgreen;
+		border-radius: 10px;
+		margin: 5px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 32px;
+		color: white;
+		background-color: darkgray;
+		flex-wrap: wrap;
+		&.spin {
+			animation: App-logo-spin infinite 5s linear;
+		}
+		.spin-back {
+			animation: App-logo-spin infinite 5s linear;
+			animation-direction: reverse;
+		}
+	}
 }
 
 .circle {
-    width: 300px;
-    height: 300px;
-    border: 10px dashed orange;
-    background-color: transparent;
-    border-radius: 50%;
-    margin: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: App-logo-spin infinite 15s linear;
-    .circle-number {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: App-logo-spin infinite 15s linear;
-        animation-direction: reverse;
-        &.n1 {
-            background-color: darkorange;
-            top: 120px;
-            left: 10px;
-        }
-        &.n2 {
-            background-color: darkorchid;
-            top: 120px;
-            right: 10px;
-        }
-        &.n3 {
-            background-color: darkgoldenrod;
-            top: 10px;
-            left: 120px;
-        }
-        &.n4 {
-            background-color: darkolivegreen;
-            bottom: 10px;
-            right: 120px;
-        }
-    }
+	width: 300px;
+	height: 300px;
+	border: 10px dashed orange;
+	background-color: transparent;
+	border-radius: 50%;
+	margin: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	animation: App-logo-spin infinite 15s linear;
+	.circle-number {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		animation: App-logo-spin infinite 15s linear;
+		animation-direction: reverse;
+		&.n1 {
+			background-color: darkorange;
+			top: 120px;
+			left: 10px;
+		}
+		&.n2 {
+			background-color: darkorchid;
+			top: 120px;
+			right: 10px;
+		}
+		&.n3 {
+			background-color: darkgoldenrod;
+			top: 10px;
+			left: 120px;
+		}
+		&.n4 {
+			background-color: darkolivegreen;
+			bottom: 10px;
+			right: 120px;
+		}
+	}
 }
