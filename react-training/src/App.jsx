@@ -1,45 +1,97 @@
-'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
-import './App.scss';
-import BaseButton from './Components/011/Design/BaseButton';
-import BlueButton from './Components/011/Design/BlueButton';
-import RedButton from './Components/011/Design/RedButton';
-import Sq from './Components/011/Design/Sq';
-import { withAdd, withClear, withColor } from './Components/011/HOCs/sq';
-// import Circle from './Components/011/Circle';
-// import Number from './Components/011/Number';
+import { useEffect, useState } from 'react';
+import Create from './Components/Dices/Create';
+import List from './Components/Dices/List';
+import { create, destroy, edit, read } from './Components/Dices/localStorage';
+import Messages from './Components/Dices/Messages';
+import './Components/Dices/style.scss';
+import {v4 as uuidv4} from 'uuid';
+
+const KEY = 'FancyDices';
 
 function App() {
 
-    const [sq, setSq] = useState([]);
+    const [lastUpdate, setLastUpdate] = useState(Date.now());
+    const [list, setList] = useState(null);
+    const [createData, setCreateData] = useState(null);
+    const [deleteModal, setDeleteModal] = useState(null);
+    const [deleteData, setDeleteData] = useState(null);
+    const [editModal, setEditModal] = useState(null);
+    const [editData, setEditData] = useState(null);
+    const [messages, setMessages] = useState(null);
 
-    const BaseButtonWithAdd = withAdd(BaseButton);
-    const RedButtonWithClear = withClear(RedButton);
-    const BlueButtonWithColor = withColor(BlueButton);
+    useEffect(() => {
+        msg('Look at this beautiful DICES', '');
+    }, []);
+
+    useEffect(() => {
+
+        // setTimeout(() => setList(read(KEY)), 1000);
+
+        setList(read(KEY));
+        // msg('Look at this beautiful DICES', '');
+
+    }, [lastUpdate]);
+
+    
+    useEffect(() => {
+        if (null === createData) {
+            return;
+        }
+        create(KEY, createData);
+        setLastUpdate(Date.now());
+        msg('Ok, there is new DICE', 'ok');
+    }, [createData]);
+
+    useEffect(() => {
+        if (null === deleteData) {
+            return;
+        }
+        destroy(KEY, deleteData.id);
+        setLastUpdate(Date.now());
+        msg('The DICE is gone now', 'error');
+    }, [deleteData]);
+
+    useEffect(() => {
+        if (null === editData) {
+            return;
+        }
+        edit(KEY, editData, editData.id);
+        setLastUpdate(Date.now());
+        msg('The DICE is different now', 'ok');
+    }, [editData]);
+
+    const msg = (text, type) => {
+        const uuid = uuidv4();
+        setMessages(m => [...m ?? [], {text, type, id: uuid}]);
+        setTimeout(() => {
+            setMessages(m => m.filter(m => uuid !== m.id));
+        }, 5000);
+    } 
 
     return (
-        <div className="App">
-            <header className="App-header">
-            {/* <Circle>
-                <Number type="n1"/>
-                <Number type="n2"/>
-                <Number type="n3"/>
-                <Number type="n4"/>
-            </Circle> */}
-                <div className="sq-bin">
-                    {
-                        sq.map((s, i) => s.show ? <Sq key={i} s={s} i={i} setSq={setSq} /> : null)
-                    }
+        <>
+        <div className="dices">
+            <div className="content">
+                <div className="left">
+                    <Create setCreateData={setCreateData}/>
                 </div>
-                <div className="sq-bin">
-                    <BaseButtonWithAdd title="add" setSq={setSq} />
-                    <RedButtonWithClear title="clear" setSq={setSq} />
-                    <BlueButtonWithColor title="color" setSq={setSq} /> 
+                <div className="right">
+                    <List 
+                    list={list}
+                    setDeleteModal={setDeleteModal}
+                    deleteModal={deleteModal}
+                    setDeleteData={setDeleteData}
+                    editModal={editModal}
+                    setEditModal={setEditModal}
+                    setEditData={setEditData}
+                     />
                 </div>
-                
-
-            </header>
+            </div>
         </div>
+        {
+            messages && <Messages messages={messages} />
+        }
+        </>
     );
 
 }
