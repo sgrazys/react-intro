@@ -3,11 +3,13 @@ const app = express();
 const port = 3003;
 
 const menu = `
-<a href="/">home</a>
-<a href="/racoon">racoon</a>
-<a href="/fox">fox</a>
+<a href="/">Home</a>
+<a href="/racoon">Racoon</a>
+<a href="/fox">Fox</a>
 `
 
+
+// Server Side Rendering
 app.get('/', (req, res) => {
   res.send(`
   ${menu}
@@ -33,3 +35,18 @@ app.get('/fox', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 })
+
+
+//API teiks informacija teiks musu reactui, ak jam reiktu rasyti
+
+app.get('/api', (req, res) => {
+  res.json({ title: 'Hello FOREST!' });
+});
+
+app.get('/api/racoon', (req, res) => {
+  res.json({ title: 'Hello RACOON!' });
+});
+
+app.get('/api/fox', (req, res) => {
+  res.json({ title: 'Hello FOX!' });
+});
